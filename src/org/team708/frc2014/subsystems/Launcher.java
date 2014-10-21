@@ -23,7 +23,8 @@ public class Launcher extends Subsystem {
     // here. Call these from Commands.
 
     // Creates motor controllers
-    private final SpeedController launcherMotor;
+    private final SpeedController launcherMotor1;
+    private final SpeedController launcherMotor2;
 
     // Sensors
     private final Encoder launcherEncoder;
@@ -55,7 +56,8 @@ public class Launcher extends Subsystem {
      */
     public Launcher() {
         // Creates motors
-        launcherMotor = new Talon(RobotMap.launcherMotor);
+        launcherMotor1 = new Talon(RobotMap.launcherMotor1);
+        launcherMotor2 = new Talon(RobotMap.launcherMotor2);
 
         // Creates sensors
         launcherEncoder = new Encoder(RobotMap.launcherEncoderA, RobotMap.launcherEncoderB);
@@ -272,7 +274,8 @@ public class Launcher extends Subsystem {
             }
         }
         
-        launcherMotor.set(newSpeed);
+        launcherMotor1.set(newSpeed);
+        launcherMotor2.set(newSpeed);
     }
 
     /**

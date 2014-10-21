@@ -108,30 +108,30 @@ public class Drivetrain extends Subsystem {
     {
         correction = rightAxis;
         
-        if (leftAxis != 0.0 && rightAxis == 0.0) {
-            if (!encodersZeroed) {
-                zeroedLeftEncoder = -getLeftEncoder();
-                zeroedRightEncoder = getRightEncoder();
-                encodersZeroed = true;
-            }
-            
-            double encoderDifference = (-getLeftEncoder() - zeroedLeftEncoder) - (getRightEncoder() - zeroedRightEncoder);
-            if (encoderDifference < -TURN_TOLERANCE || encoderDifference > TURN_TOLERANCE) {
-                correction = Math708.makeWithin(encoderDifference / compensation_scalar, -1.0,1.0);
-            } else {
-                correction = 0.0;
-            }
-        } else {
-            encodersZeroed = false;
-        }
-        
-        if (swag) {
+//        if (leftAxis != 0.0 && rightAxis == 0.0) {
+//            if (!encodersZeroed) {
+//                zeroedLeftEncoder = -getLeftEncoder();
+//                zeroedRightEncoder = getRightEncoder();
+//                encodersZeroed = true;
+//            }
+//            
+//            double encoderDifference = (-getLeftEncoder() - zeroedLeftEncoder) - (getRightEncoder() - zeroedRightEncoder);
+//            if (encoderDifference < -TURN_TOLERANCE || encoderDifference > TURN_TOLERANCE) {
+//                correction = Math708.makeWithin(encoderDifference / compensation_scalar, -1.0,1.0);
+//            } else {
+//                correction = 0.0;
+//            }
+//        } else {
+//            encodersZeroed = false;
+//        }
+//        
+//        if (swag) {
             // Driver for two motors on
             swagDriver.arcadeDrive((swagPercent * leftAxis), (swagPercent * correction));
-        } else {
-            // Driver for three motors on
-            driver.arcadeDrive((normalPercent * leftAxis), (normalPercent * correction));
-        }
+//        } else {
+//            // Driver for three motors on
+//            driver.arcadeDrive((normalPercent * leftAxis), (normalPercent * correction));
+//        }
     }
     /**
      * Returns the swag state

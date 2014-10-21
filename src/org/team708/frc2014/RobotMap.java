@@ -15,7 +15,8 @@ public class RobotMap {
     public static final int rightMotor2 = 4;   //swag drive enabled
     
     // Motor/ PWM Ports -- Launcher
-    public static final int launcherMotor = 5; //Launcher motor
+    public static final int launcherMotor1 = 5; //Launcher motor
+    public static final int launcherMotor2 = 6; //Launcher motor
     
     // Motor/ PWM Ports -- Intake
     public static final int intakeMotor = 7; //Intake Motor
