@@ -40,7 +40,8 @@ public class DriveBackwardToEncoder extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(goalCount - drivetrain.getAverageEncoderDistance()) <= TOLERANCE;
+//        return Math.abs(goalCount - drivetrain.getAverageEncoderDistance()) <= TOLERANCE;
+        return true;
     }
 
     // Called once after isFinished returns true

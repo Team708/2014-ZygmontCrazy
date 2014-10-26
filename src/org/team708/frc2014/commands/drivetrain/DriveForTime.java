@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package org.team708.frc2014.commands.drivetrain;
@@ -8,13 +9,18 @@ import org.team708.frc2014.commands.CommandBase;
 
 /**
  *
- * @author Robotics
+ * @author Owner
  */
-public class ResetEncoders extends CommandBase {
+public class DriveForTime extends CommandBase {
     
-    public ResetEncoders() {
+    private double goalTime;
+    private double speed = 1.0;
+    
+    public DriveForTime(double goalTime) {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(drivetrain);
+        
+        this.goalTime = goalTime;
     }
 
     // Called just before this Command runs the first time
@@ -23,12 +29,12 @@ public class ResetEncoders extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-//        drivetrain.resetEncoders();
+        drivetrain.haloDrive(speed, 0.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return (goalTime >= timeSinceInitialized());
     }
 
     // Called once after isFinished returns true

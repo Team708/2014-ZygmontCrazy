@@ -6,9 +6,8 @@ package org.team708.frc2014.commands.autonomous;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
-import org.team708.frc2014.commands.drivetrain.DriveBackwardToEncoder;
+import org.team708.frc2014.commands.drivetrain.DriveForTime;
 import org.team708.frc2014.commands.drivetrain.DriveForwardToTargetUltrasonic;
-import org.team708.frc2014.commands.drivetrain.ResetEncoders;
 import org.team708.frc2014.commands.intake.DeployIntake;
 import org.team708.frc2014.commands.intake.IntakeBall;
 import org.team708.frc2014.commands.intake.IntakeStop;
@@ -22,10 +21,11 @@ import org.team708.frc2014.commands.launcher.LauncherMoveToTop;
  */
 public class YoloSwagShot extends CommandGroup {
     
+    private final double blindDriveTime = 0.75;
+    
     public YoloSwagShot() {
         //initial driving
-        addSequential(new ResetEncoders());
-        addSequential(new DriveBackwardToEncoder(-4000));
+        addSequential(new DriveForTime(blindDriveTime));
         addSequential(new DriveForwardToTargetUltrasonic(0));
         
         //open intake and prepare to shoot

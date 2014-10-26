@@ -25,7 +25,7 @@ public class Drivetrain extends Subsystem {
     // Creates speed controllers for right side (1 = normal/crawl, 2 = swag)
     private final SpeedController rightMotor1, rightMotor2;
     
-    private final Encoder leftEncoder, rightEncoder; // Sensors
+//    private final Encoder leftEncoder, rightEncoder; // Sensors
     
     // Creates drivers (one for two motors running, one for three running)
     private final RobotDrive driver, swagDriver;
@@ -44,13 +44,13 @@ public class Drivetrain extends Subsystem {
     private final double ultrasonicMoveSpeed = 0.70;
     private final double turnTolerance = 4;
     
-    //Encoder correction
-    private boolean encodersZeroed = false;
-    private double zeroedRightEncoder;
-    private double zeroedLeftEncoder;
-    private final double TURN_TOLERANCE = 25.0;
+//    //Encoder correction
+//    private boolean encodersZeroed = false;
+//    private double zeroedRightEncoder;
+//    private double zeroedLeftEncoder;
+//    private final double TURN_TOLERANCE = 25.0;
     private double correction;
-    private double compensation_scalar = 400.0;
+//    private double compensation_scalar = 400.0;
     
     // Shooting type constants
     public final int AUTONOMOUS_SHOT = 0;
@@ -81,11 +81,11 @@ public class Drivetrain extends Subsystem {
         rightMotor1 = new Talon(RobotMap.rightMotor1);
         rightMotor2 = new Talon(RobotMap.rightMotor2);
         
-        //Creates encoders
-        leftEncoder = new Encoder(RobotMap.leftEncoderA, RobotMap.leftEncoderB);
-        rightEncoder = new Encoder(RobotMap.rightEncoderA, RobotMap.rightEncoderB);
-        leftEncoder.start();
-        rightEncoder.start();
+//        //Creates encoders
+//        leftEncoder = new Encoder(RobotMap.leftEncoderA, RobotMap.leftEncoderB);
+//        rightEncoder = new Encoder(RobotMap.rightEncoderA, RobotMap.rightEncoderB);
+//        leftEncoder.start();
+//        rightEncoder.start();
         
         // Creates normal drive mode using two motor controllers (2 motors on each side)
         driver = new RobotDrive(leftMotor1,rightMotor1);
@@ -154,25 +154,25 @@ public class Drivetrain extends Subsystem {
         }
     }
     
-    /**
-     * Resets the encoder values
-     */
-    public void resetEncoders() {
-        leftEncoder.reset();
-        rightEncoder.reset();
-    }
-    
-    public double getAverageEncoderDistance() {
-        return (-leftEncoder.getDistance() + (rightEncoder.getDistance())) / 2;
-    }
-    
-    public double getLeftEncoder() {
-        return leftEncoder.get();
-    }
-    
-    public double getRightEncoder() {
-        return rightEncoder.get();
-    }
+//    /**
+//     * Resets the encoder values
+//     */
+//    public void resetEncoders() {
+//        leftEncoder.reset();
+//        rightEncoder.reset();
+//    }
+//    
+//    public double getAverageEncoderDistance() {
+//        return (-leftEncoder.getDistance() + (rightEncoder.getDistance())) / 2;
+//    }
+//    
+//    public double getLeftEncoder() {
+//        return leftEncoder.get();
+//    }
+//    
+//    public double getRightEncoder() {
+//        return rightEncoder.get();
+//    }
     
     /**
      * Stops the motors
@@ -251,8 +251,8 @@ public class Drivetrain extends Subsystem {
      * Sends data to the dumb-dashboard
      */
     public void sendToDash() {
-        SmartDashboard.putNumber("Left Drivetrain Encoder", leftEncoder.get());
-        SmartDashboard.putNumber("Right Drivetrain Encoder", rightEncoder.get());
+//        SmartDashboard.putNumber("Left Drivetrain Encoder", leftEncoder.get());
+//        SmartDashboard.putNumber("Right Drivetrain Encoder", rightEncoder.get());
         SmartDashboard.putNumber("Left Ultrasonic Avg V", leftUltrasonic.getAverageVoltage());
         SmartDashboard.putNumber("Right Ultrasonic Avg V", rightUltrasonic.getAverageVoltage());
         SmartDashboard.putNumber("Left Ultrasonic", (leftUltrasonic.getDistance()));

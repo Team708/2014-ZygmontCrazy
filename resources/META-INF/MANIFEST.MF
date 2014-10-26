@@ -1,6 +1,6 @@
 MIDlet-Name: Robot2014
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: ZygmontCrazy, , org.team708.frc2014.ZygmontCrazy
+MIDlet-1: ZygmontSpooky, , org.team708.frc2014.ZygmontSpooky
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1

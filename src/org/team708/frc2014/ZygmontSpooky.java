@@ -29,7 +29,7 @@ import org.team708.frc2014.commands.autonomous.YoloSwagShot;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class ZygmontCrazy extends IterativeRobot {
+public class ZygmontSpooky extends IterativeRobot {
 
     Command autonomousCommand;                      //the current autonomous command
     Compressor compressor;                          //compressor for the pneumatics

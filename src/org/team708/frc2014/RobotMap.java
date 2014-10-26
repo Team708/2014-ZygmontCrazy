@@ -38,7 +38,7 @@ public class RobotMap {
     public static final int launcherUpperSwitch = 8; //Photogate switch for bottom/min of launcher
     
     //Digital Inputs -- Intake
-    public static final int compressorPressureSwitch = 9;
+    public static final int compressorPressureSwitch = 1;
     
     //Analog Breakout Module
     public static final int analogBreakout = 1;
