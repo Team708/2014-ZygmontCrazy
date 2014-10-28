@@ -260,4 +260,9 @@ public class Drivetrain extends Subsystem {
         SmartDashboard.putBoolean("Spooky Mode", spooky);
         SmartDashboard.putNumber("Bias Compensation",correction);
     }
+    
+    public void sendToDashComp() {
+        SmartDashboard.putNumber("Left Ultrasonic", (leftUltrasonic.getDistance()));
+        SmartDashboard.putNumber("Right Ultrasonic", rightUltrasonic.getDistance());
+    }
 }

@@ -17,7 +17,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.team708.frc2014.commands.CommandBase;
-import org.team708.frc2014.commands.autonomous.OneHotGoalShot;
 import org.team708.frc2014.commands.autonomous.ThreeBallSpookyScaryShot;
 import org.team708.frc2014.commands.autonomous.TwoBallSpookyScaryShot;
 import org.team708.frc2014.commands.autonomous.SpookyScaryShot;
@@ -123,6 +122,14 @@ public class ZygmontSpooky extends IterativeRobot {
                 CommandBase.drivetrain.sendToDash();
                 CommandBase.intake.sendToDash();
                 CommandBase.launcher.sendToDash();
+            }
+        }   else {
+            if(statsTimer.get() >= sendStatsIntervalSec)
+            {
+                statsTimer.reset();
+                
+                CommandBase.intake.sendToDashComp();
+                CommandBase.drivetrain.sendToDashComp();
             }
         }
     }

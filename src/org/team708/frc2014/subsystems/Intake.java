@@ -120,4 +120,12 @@ public class Intake extends Subsystem {
         SmartDashboard.putNumber("IR Sensor", intakeIR.getDistance());
         SmartDashboard.putBoolean("Is Deployed", isDeployed());
     }
+    
+    /**
+     * Sends information to the SmartDashboard for competition
+     */
+    public void sendToDashComp() {
+         SmartDashboard.putBoolean("Is Deployed", isDeployed());
+         SmartDashboard.putBoolean("Has Ball", hasBall());
+    }
 }
