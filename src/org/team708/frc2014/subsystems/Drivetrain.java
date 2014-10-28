@@ -1,6 +1,6 @@
 package org.team708.frc2014.subsystems;
 
-import edu.wpi.first.wpilibj.Encoder;
+//import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -9,35 +9,35 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.team708.frc2014.RobotMap;
 import org.team708.frc2014.commands.drivetrain.Drive;
 import org.team708.frc2014.sensors.UltrasonicSensor;
-import org.team708.util.Math708;
+//import org.team708.util.Math708;
 
 /**
- * A tank-style drivetrain that either uses 4 (normal) or 6 (swag) motors.
+ * A tank-style drivetrain that either uses 4 (normal) or 6 (spooky) motors.
  * It has an encoder and an ultrasonic sensor per side of the robot. The 
- * drivetrain scales the PWM power signal depending on whether it is in swag or
- * not.
+ drivetrain scales the PWM power signal depending on whether it is in spooky or
+ not.
  * @author Matt Foley, Nam Tran, Pat Walls, Jialin Wang, Connor Willison
  */
 public class Drivetrain extends Subsystem {
     
-    // Creates speed controllers for left side (1 = normal/crawl, 2 = swag)
+    // Creates speed controllers for left side (1 = normal/crawl, 2 = spooky)
     private final SpeedController leftMotor1, leftMotor2;
-    // Creates speed controllers for right side (1 = normal/crawl, 2 = swag)
+    // Creates speed controllers for right side (1 = normal/crawl, 2 = spooky)
     private final SpeedController rightMotor1, rightMotor2;
     
 //    private final Encoder leftEncoder, rightEncoder; // Sensors
     
     // Creates drivers (one for two motors running, one for three running)
-    private final RobotDrive driver, swagDriver;
+    private final RobotDrive driver, scareDriver;
     
     //Creates Ultrasonic Sensors
     private final UltrasonicSensor leftUltrasonic, rightUltrasonic;
     
-    private boolean swag = false; // Drivetrain mode check
+    private boolean spooky = false; // Drivetrain mode check
     
     // Scaling for drive modes
     public final double normalPercent = 0.85;
-    public final double swagPercent = 1.00;
+    public final double spookyPercent = 1.00;
     
     // Scaling for ultrasonic direction correction
     private final double ultrasonicScalar = .10;
@@ -91,8 +91,8 @@ public class Drivetrain extends Subsystem {
         driver = new RobotDrive(leftMotor1,rightMotor1);
         driver.setSafetyEnabled(false);
         // Creates drive mode using four motor controllers (3 motors on each side)
-        swagDriver = new RobotDrive(leftMotor1, leftMotor2, rightMotor1, rightMotor2);
-        swagDriver.setSafetyEnabled(false);
+        scareDriver = new RobotDrive(leftMotor1, leftMotor2, rightMotor1, rightMotor2);
+        scareDriver.setSafetyEnabled(false);
         
         //Creates Drivetrain ultrasonic sensors
         leftUltrasonic = new UltrasonicSensor(RobotMap.drivetrainLeftUltrasonic, UltrasonicSensor.MB1010);
@@ -125,30 +125,30 @@ public class Drivetrain extends Subsystem {
 //            encodersZeroed = false;
 //        }
 //        
-//        if (swag) {
+//        if (spooky) {
             // Driver for two motors on
-            swagDriver.arcadeDrive((swagPercent * leftAxis), (swagPercent * correction));
+            scareDriver.arcadeDrive((spookyPercent * leftAxis), (spookyPercent * correction));
 //        } else {
 //            // Driver for three motors on
 //            driver.arcadeDrive((normalPercent * leftAxis), (normalPercent * correction));
 //        }
     }
     /**
-     * Returns the swag state
+     * Returns the spooky state
      * @return 
      */
-    public boolean getSwag() {
-        return swag;
+    public boolean getSpooky() {
+        return spooky;
     }
     
     /**
-     * Sets whether swag mode is enabled
-     * @param newSwag 
+     * Sets whether spooky mode is enabled
+     * @param newSpooky 
      */
-    public void setSwag(boolean newSwag) {
-        swag = newSwag;
+    public void setSpooky(boolean newSpooky) {
+        spooky = newSpooky;
         
-        if (!swag) {
+        if (!spooky) {
             leftMotor2.set(0.0);
             rightMotor2.set(0.0);
         }
@@ -257,7 +257,7 @@ public class Drivetrain extends Subsystem {
         SmartDashboard.putNumber("Right Ultrasonic Avg V", rightUltrasonic.getAverageVoltage());
         SmartDashboard.putNumber("Left Ultrasonic", (leftUltrasonic.getDistance()));
         SmartDashboard.putNumber("Right Ultrasonic", rightUltrasonic.getDistance());
-        SmartDashboard.putBoolean("Swag Mode", swag);
+        SmartDashboard.putBoolean("Spooky Mode", spooky);
         SmartDashboard.putNumber("Bias Compensation",correction);
     }
 }

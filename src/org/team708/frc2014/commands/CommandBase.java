@@ -3,8 +3,8 @@ package org.team708.frc2014.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.team708.frc2014.OI;
-import org.team708.frc2014.commands.autonomous.TwoBallYoloSwagShot;
-import org.team708.frc2014.commands.autonomous.YoloSwagShot;
+import org.team708.frc2014.commands.autonomous.TwoBallSpookyScaryShot;
+import org.team708.frc2014.commands.autonomous.SpookyScaryShot;
 import org.team708.frc2014.commands.drivetrain.ResetEncoders;
 import org.team708.frc2014.commands.drivetrain.TurnToTargetUltrasonic;
 import org.team708.frc2014.commands.intake.DispenseBallTimed;
@@ -51,8 +51,8 @@ public abstract class CommandBase extends Command {
         SmartDashboard.putData(ledArray);
         
         //send commands to SmartDashboard for debugging
-        SmartDashboard.putData("YOLOSWAG Shot", new YoloSwagShot());
-        SmartDashboard.putData("2 Ball YOLOSWAG Shot", new TwoBallYoloSwagShot());
+        SmartDashboard.putData("YOLOSWAG Shot", new SpookyScaryShot());
+        SmartDashboard.putData("2 Ball YOLOSWAG Shot", new TwoBallSpookyScaryShot());
         
         SmartDashboard.putData("Intake for 5 second", new IntakeBallTimed(5));
         SmartDashboard.putData("Dispense for 5 second", new DispenseBallTimed(5));

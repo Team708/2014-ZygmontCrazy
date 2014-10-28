@@ -4,10 +4,10 @@ package org.team708.frc2014;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import org.team708.frc2014.commands.LEDs.ToggleLED;
+//import org.team708.frc2014.commands.LEDs.ToggleLED;
 import org.team708.frc2014.commands.drivetrain.DriveForwardToTargetUltrasonic;
 import org.team708.frc2014.commands.drivetrain.Stop;
-import org.team708.frc2014.commands.drivetrain.ToggleSwagSpeed;
+//import org.team708.frc2014.commands.drivetrain.ToggleSwagSpeed;
 import org.team708.frc2014.commands.intake.DeployIntake;
 import org.team708.frc2014.commands.intake.RetractIntake;
 import org.team708.frc2014.commands.launcher.LauncherGoalShot;
@@ -25,10 +25,10 @@ public class OI {
     
     // Driver
     private static final int overrideAutoButtonNumber = Gamepad.button_L_Shoulder;
-    private static final int holdToSwagSpeedButtonNumber = Gamepad.button_R_Shoulder;
+//    private static final int holdToSwagSpeedButtonNumber = Gamepad.button_R_Shoulder;
     private static final int activateAutoShootButtonNumber = Gamepad.button_A;
     private static final int activateAutoPassButtonNumber = Gamepad.button_B;
-    private static final int toggleLEDButtonNumber = Gamepad.button_X;
+//    private static final int toggleLEDButtonNumber = Gamepad.button_X;
     
     // Operator
     private static final int deployIntakeButtonNumber = Gamepad.button_B;
@@ -47,7 +47,7 @@ public class OI {
     public static final Button overrideAuto = new JoystickButton(driverGamepad, overrideAutoButtonNumber);
     
     //Switch to swag speed
-    public static final Button holdToSwagSpeed = new JoystickButton(driverGamepad, holdToSwagSpeedButtonNumber);
+//    public static final Button holdToSwagSpeed = new JoystickButton(driverGamepad, holdToSwagSpeedButtonNumber);
     
     // Activates auto shoot distance finding
     public static final Button activateAutoShoot = new JoystickButton(driverGamepad, activateAutoShootButtonNumber);
@@ -56,7 +56,7 @@ public class OI {
     public static final Button activateAutoPass = new JoystickButton(driverGamepad, activateAutoPassButtonNumber);
     
     // Toggles the state of the LEDs
-    public static final Button toggleLED = new JoystickButton(driverGamepad, toggleLEDButtonNumber);
+//    public static final Button toggleLED = new JoystickButton(driverGamepad, toggleLEDButtonNumber);
     
 //    //Follow the ball while this button is held
 //    public static final Button holdToFollowBallButton = new JoystickButton(driverGamepad,holdToFollowBallButtonNumber);
@@ -78,10 +78,10 @@ public class OI {
     {
         // Driver
         overrideAuto.whenPressed(new Stop());
-        holdToSwagSpeed.whileHeld(new ToggleSwagSpeed());
+//        holdToSwagSpeed.whileHeld(new ToggleSwagSpeed());
         activateAutoShoot.whenPressed(new DriveForwardToTargetUltrasonic(2));
         activateAutoPass.whenPressed(new DriveForwardToTargetUltrasonic(1));
-        toggleLED.whenPressed(new ToggleLED());
+//        toggleLED.whenPressed(new ToggleLED());
         
         // Operator
         deployIntake.whenPressed(new DeployIntake());

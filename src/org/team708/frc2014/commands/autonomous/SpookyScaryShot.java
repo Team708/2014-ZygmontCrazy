@@ -19,11 +19,11 @@ import org.team708.frc2014.commands.launcher.LauncherMoveToTop;
  *
  * @author Nam Tran
  */
-public class YoloSwagShot extends CommandGroup {
+public class SpookyScaryShot extends CommandGroup {
     
     private final double blindDriveTime = 0.75;
     
-    public YoloSwagShot() {
+    public SpookyScaryShot() {
         //initial driving
         addSequential(new DriveForTime(blindDriveTime));
         addSequential(new DriveForwardToTargetUltrasonic(0));

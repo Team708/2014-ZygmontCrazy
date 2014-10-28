@@ -18,9 +18,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.team708.frc2014.commands.CommandBase;
 import org.team708.frc2014.commands.autonomous.OneHotGoalShot;
-import org.team708.frc2014.commands.autonomous.ThreeBallYoloSwagShot;
-import org.team708.frc2014.commands.autonomous.TwoBallYoloSwagShot;
-import org.team708.frc2014.commands.autonomous.YoloSwagShot;
+import org.team708.frc2014.commands.autonomous.ThreeBallSpookyScaryShot;
+import org.team708.frc2014.commands.autonomous.TwoBallSpookyScaryShot;
+import org.team708.frc2014.commands.autonomous.SpookyScaryShot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -129,9 +129,9 @@ public class ZygmontSpooky extends IterativeRobot {
     
     // Adds options for autonomous modes
     private void queueAutonomousCommands() {
-        autoChooser.addDefault("One Ball YOLOSWAG", new YoloSwagShot());
-        autoChooser.addObject("Two Ball YOLOSWAG", new TwoBallYoloSwagShot());
-        autoChooser.addObject("Three Ball YOLOSWAG", new ThreeBallYoloSwagShot());
+        autoChooser.addDefault("One Ball YOLOSWAG", new SpookyScaryShot());
+        autoChooser.addObject("Two Ball YOLOSWAG", new TwoBallSpookyScaryShot());
+        autoChooser.addObject("Three Ball YOLOSWAG", new ThreeBallSpookyScaryShot());
         SmartDashboard.putData("Autonomous Selector", autoChooser);
     }
 }

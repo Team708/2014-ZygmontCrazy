@@ -19,13 +19,13 @@ import org.team708.frc2014.commands.launcher.LauncherMoveTo;
  *
  * @author Nam Tran
  */
-public class TwoBallYoloSwagShot extends CommandGroup {
+public class TwoBallSpookyScaryShot extends CommandGroup {
     
     private final double blindDriveTime = 0.75;
     private final double ballGrabTime = 0.2;    // Was 0.3
     private final double ballDispenseTime = 0.08;
     
-    public TwoBallYoloSwagShot() {
+    public TwoBallSpookyScaryShot() {
         // Opens the intake while keeping the first ball in by spinning
         addSequential(new DeployIntake());
         addSequential(new IntakeBallTimed(0.8));    // Was 1.2

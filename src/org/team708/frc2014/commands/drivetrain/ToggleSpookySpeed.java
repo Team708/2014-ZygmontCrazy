@@ -10,9 +10,9 @@ import org.team708.frc2014.commands.CommandBase;
  *
  * @author Matt Foley, Nam Tran, Pat Walls
  */
-public class ToggleSwagSpeed extends CommandBase {
+public class ToggleSpookySpeed extends CommandBase {
     
-    public ToggleSwagSpeed() {
+    public ToggleSpookySpeed() {
         // Use requires() here to declare subsystem dependencies
     }
 
@@ -22,7 +22,7 @@ public class ToggleSwagSpeed extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        drivetrain.setSwag(true);
+        drivetrain.setSpooky(true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +32,7 @@ public class ToggleSwagSpeed extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        drivetrain.setSwag(false);
+        drivetrain.setSpooky(false);
     }
 
     // Called when another command which requires one or more of the same
