@@ -129,9 +129,9 @@ public class ZygmontSpooky extends IterativeRobot {
     
     // Adds options for autonomous modes
     private void queueAutonomousCommands() {
-        autoChooser.addDefault("One Ball YOLOSWAG", new SpookyScaryShot());
-        autoChooser.addObject("Two Ball YOLOSWAG", new TwoBallSpookyScaryShot());
-        autoChooser.addObject("Three Ball YOLOSWAG", new ThreeBallSpookyScaryShot());
+        autoChooser.addDefault("One Ball Spooky Shot", new SpookyScaryShot());
+        autoChooser.addObject("Two Ball Spooky Shot", new TwoBallSpookyScaryShot());
+        autoChooser.addObject("Three Ball Spooky Shot", new ThreeBallSpookyScaryShot());
         SmartDashboard.putData("Autonomous Selector", autoChooser);
     }
 }
